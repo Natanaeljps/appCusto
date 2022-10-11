@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background: lightgreen;
+    text-align: center;
+}
+
+/*LOGO*/
+
+#logo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    color: brown;
+
+    margin: 5rem 0 2rem 0;
+}
+
+
+
+/*CAIXAS*/
+
+#caixas{
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 5rem;
+
+}
+.email{
+    margin-bottom: 6rem;
+}
+
+input{
+    font-size: 20px;
+    padding-left: 1rem;
+    border: none;
+}
+
+#txtEmail{
+    position: absolute;
+    margin-top: -1.5rem;
+    margin-left: 1rem;
+}
+
+#boxEmail{
+    width: 20rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+
+#txtSenha{
+    position: absolute;
+    margin-top: -1.5rem;
+    margin-left: 1rem;
+
+}
+
+#boxSenha{
+    width: 20rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+
+/*BOTÂO*/
+
+button{
+    background: lightsalmon;
+    height: 5rem;
+    width: 12rem;
+    border-radius: 2.5rem;
+    font-size: 20px;
+    border: none;
+}
