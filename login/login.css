@@ -1,0 +1,39 @@
+#login{
+    margin-bottom: 3rem;
+    font-family: 'Sora', sans-serif;
+
+
+}
+
+.erro{
+    color: white;
+    background: red;
+    margin-left: 47rem;
+    margin-right: 47rem;
+    display: none;
+    
+}
+
+
+
+.btEntrar{
+    margin-top: 3rem;
+    font-family: 'Sora', sans-serif;
+}
+
+#recSenha {
+    background: darkslateblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+    height: 2rem;
+    width: 15rem;
+
+    margin: 2rem 0 2rem 0;
+
+}
+
+
+button[disabled]{
+    opacity: .5;
+}

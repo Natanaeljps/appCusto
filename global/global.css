@@ -19,17 +19,14 @@ html{
     margin: 5rem 0 2rem 0;
 }
 
-
-
 /*CAIXAS*/
 
 #caixas{
     font-family: 'Sora', sans-serif;
-    margin-bottom: 5rem;
 
 }
 .email{
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
 input{
@@ -37,6 +34,8 @@ input{
     padding-left: 1rem;
     border: none;
 }
+
+
 
 #txtEmail{
     position: absolute;
@@ -72,4 +71,7 @@ button{
     border-radius: 2.5rem;
     font-size: 20px;
     border: none;
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 5rem;
 }
+

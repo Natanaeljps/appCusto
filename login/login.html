@@ -4,10 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Receita/Custos - Login</title>
+    
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Sora:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!--STYLE-->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/global/global.css">
+
+
+    <title>App De Receita$/Custo$ - Login</title>
+
 </head>
+
 <body>
-    <h1>LOGIN</h1>
+
+    <header id="cabeca">
+        <div class="logo"><h1 id="logo">Receita$/Custo$</h1></div>
+        <div class="txtlogin"><h2 id="login">Acesse sua Conta:</h2></div>
+    </header>
+
+    <main id="caixas">
+
+        <div class="email">
+            <label for="e-mail" id="txtEmail"> <h3>Email: </h3></label>
+            <input onchange="onChangeEmail()" type="email" id="boxEmail" placeholder="Email:">
+
+            <div class="erro" id="sem_email" >Email é Obrigatório</div>
+            <div class="erro" id="email_invalido">Email é inválido</div>
+            
+        </div>
+        <div class="senha">
+            <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
+            <input type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
+
+            <div class="erro" id="sem_senha">Senha é Obrigatório</div>
+
+        </div>
+
+        <div class="recSenha"><button id="recSenha" class="solid" 
+        disabled="true">Recuperar Senha!</button></div>
+        <p> <a href="http://127.0.0.1:5500/cadastro/cadastro.html">Clique aqui</a>
+            para se cadastar</p>
+
+        <div class="btEntrar">
+            <button id="logar" disabled="true" 
+            type="button" onclick="login()">Entrar!</button>
+        </div>
+    </main>
+
+    <footer id="rodape">
+        <p>Make by NatanaelJPS</p>
+    </footer>
+
+    <!--PROJETOS-->
+    <script src="login.js"></script>
+    <script src="/global/global.js"></script>
+
+    <!--FIREBASE-->
+    <!--
+    <script>
+        import { initializeApp } from 'firebase/app';
+        import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+    </script> 
+    -->
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBDOelMQ5Sr3yAIxsi-zWlEv1tLiLsjDrc",
+          authDomain: "receitascustos.firebaseapp.com",
+          projectId: "receitascustos",
+          storageBucket: "receitascustos.appspot.com",
+          messagingSenderId: "238471214004",
+          appId: "1:238471214004:web:22bff801de09e2c69678e1"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+      </script>
     
 </body>
 </html>

@@ -31,15 +31,15 @@
     <main id="caixas">
         <div class="email">
             <label for="email" id="txtEmail"> <h3>Email: </h3></label>
-            <input type="text" id="boxEmail" placeholder="Email:">
+            <input type="text" onchange="onChangeEmail" id="boxEmail" placeholder="Email:">
         </div>
         <div class="senha">
             <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
-            <input type="password" id="boxSenha" placeholder="Senha:">
+            <input type="password" onchange="onChangeSenha" id="boxSenha" placeholder="Senha:">
         </div>
 
         <div class="btCadastrar">
-            <button><h2>Cadastrar!</h2></button>
+            <button onclick="entrar()" disabled="true"><h2>Cadastrar!</h2></button>
         </div>
     </main>
 
