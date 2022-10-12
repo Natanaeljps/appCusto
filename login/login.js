@@ -1,4 +1,3 @@
-console.log("hello!");
 
 
 
@@ -14,18 +13,6 @@ function onChangeEmail(){
   }
     
   
- /* function login(){ 
- firebase.auth().signInWithEmailAndPassword(
-  form.boxEmail().value, form.boxSenha().value
-  ).then(response => {
-    window.location.href = "/page/inicial.html";
-}).catch(error => {
-    alert(error.code);
-});
-  }*/
-
-
-  
   function eEmailValido() {
     const boxEmail = form.boxEmail().value;
     if (!boxEmail) {
@@ -37,7 +24,18 @@ function onChangeEmail(){
 //=================================================================================
 
 
+function login() {
+  firebase.auth().signInWithEmailAndPassword(
+      form.boxEmail().value, form.boxSenha().value
+  ).then(response => {
+      window.location.href = "/page/inicial.html";
+  }).catch(error => {
+      alert(getErrorMessage(error));
+  });
+}
  
+
+
 //=================================================================================
 
   function toggleEmailErrors() {
@@ -83,4 +81,3 @@ function onChangeEmail(){
     logar:()=> document.getElementById('logar'),
   }
 
- 
