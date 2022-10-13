@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <!--STYLE-->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/login/login.css">
     <link rel="stylesheet" href="/global/global.css">
 
 
@@ -26,14 +26,14 @@
 
     <header id="cabeca">
         <div class="logo"><h1 id="logo">Receita$/Custo$</h1></div>
-        <div class="txtlogin"><h2 id="login">Acesse sua Conta:</h2></div>
+        <div class="sub-txt"><h2>Acesse sua Conta:</h2></div>
     </header>
 
     <main id="caixas">
 <form action="">
     <div class="email">
         <label for="e-mail" id="txtEmail"> <h3>Email: </h3></label>
-        <input onchange="onChangeEmail()" type="email" id="boxEmail" placeholder="Email:">
+        <input onchange="onChangeEmail()" type="email" id="boxEmail" placeholder="Seu email:">
 
         <div class="erro" id="sem_email" >Email é Obrigatório</div>
         <div class="erro" id="email_invalido">Email é inválido</div>
@@ -47,14 +47,16 @@
 
     </div>
 
-    <div class="recSenha"><button id="recSenha" class="solid" 
-    disabled="true">Recuperar Senha!</button></div>
-    <p> <a href="http://127.0.0.1:5500/cadastro/cadastro.html">Clique aqui</a>
-        para se cadastar</p>
+    <div class="recSenha">
+        <button id="recSenha" class="solid" 
+    disabled="true">Recuperar Senha!</button>
+    </div>
 
-    <div class="btEntrar">
+    <button type="button" onclick="btCadastrar()"><h2>Cadastro!</h2></button>
+
+    <div>
         <button id="logar" disabled="true" 
-        type="button" onclick="login()" > Entrar </button>
+        type="button" onclick="login()"><h2>Entrar!</h2></button>
     </div>
 </form>
         
@@ -65,7 +67,7 @@
     </footer>
 
     <!--PROJETOS-->
-    <script src="login.js"></script>
+    <script src="/login/login.js"></script>
     <script src="/global/global.js"></script>
 
     <!--FIREBASE-->
