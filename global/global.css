@@ -16,7 +16,7 @@ html{
     font-size: 60px;
     color: brown;
 
-    margin: 5rem 0 2rem 0;
+    margin: 2rem 0 1rem 0;
 }
 
 /*CAIXAS*/
@@ -29,12 +29,13 @@ html{
     margin-bottom: 3rem;
 }
 
+
+
 input{
     font-size: 20px;
     padding-left: 1rem;
     border: none;
 }
-
 
 
 #txtEmail{
@@ -53,10 +54,21 @@ input{
     position: absolute;
     margin-top: -1.5rem;
     margin-left: 1rem;
+}
 
+#txtCoSenha{
+    position: absolute;
+    margin-top: -1.5rem;
+    margin-left: 1rem;
 }
 
 #boxSenha{
+    width: 20rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+
+#boxCoSenha{
     width: 20rem;
     height: 3rem;
     border-radius: 1.5rem;
@@ -69,9 +81,9 @@ button{
     height: 5rem;
     width: 12rem;
     border-radius: 2.5rem;
-    font-size: 20px;
     border: none;
     font-family: 'Sora', sans-serif;
-    margin-bottom: 5rem;
 }
+
+
 

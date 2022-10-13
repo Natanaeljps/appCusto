@@ -31,15 +31,24 @@
     <main id="caixas">
         <div class="email">
             <label for="email" id="txtEmail"> <h3>Email: </h3></label>
-            <input type="text" onchange="onChangeEmail" id="boxEmail" placeholder="Email:">
+            <input type="text" onchange="onChangeEmail" id="boxEmail" placeholder="Seu mail:">
         </div>
         <div class="senha">
             <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
             <input type="password" onchange="onChangeSenha" id="boxSenha" placeholder="Senha:">
         </div>
 
+        <div class="coSenha">
+            <label for="senha" id="txtCoSenha"><h3>Confirmar Senha:</h3></label>
+            <input type="password" onchange="onChangeCoSenha" id="boxCoSenha" placeholder="Confirme sua Senha:">
+        </div>
+
+        <div class="btLogin">
+            <button class="clear" onclick="btLogin()"><h2>Vou ao login</h2></button>
+        </div>
+
         <div class="btCadastrar">
-            <button onclick="entrar()" disabled="true"><h2>Cadastrar!</h2></button>
+            <button class="solid" onclick="cadastrar()"><h2>Cadastrar!</h2></button>
         </div>
     </main>
 
@@ -47,9 +56,24 @@
         <p>Make by NatanaelJPS</p>
     </footer>
 
-    <!--MAIN-->
+    <!--PROJETOS-->
     <script src="cadastro.js"></script>
     <script src="/global/global.js"></script>
+
+     <!--FIREBASE-->
+     <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>
+     <script>
+     const firebaseConfig = {
+         apiKey: "AIzaSyBDOelMQ5Sr3yAIxsi-zWlEv1tLiLsjDrc",
+         authDomain: "receitascustos.firebaseapp.com",
+         projectId: "receitascustos",
+         storageBucket: "receitascustos.appspot.com",
+         messagingSenderId: "238471214004",
+         appId: "1:238471214004:web:22bff801de09e2c69678e1"
+   };
+     firebase.initializeApp(firebaseConfig);
+ </script>
     
 </body>
 </html>

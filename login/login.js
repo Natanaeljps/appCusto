@@ -21,7 +21,7 @@ function onChangeEmail(){
     return validateEmail(boxEmail);
   }
 
-//=================================================================================
+//=================AUTENTICAÇÃO DE USUÁRIO NO LOGIN================================================================
 
 
 function login() {
@@ -33,8 +33,16 @@ function login() {
       alert(getErrorMessage(error));
   });
 }
- 
 
+function getErrorMessage(error) {
+  if (error.code == "auth/user-not-found") {
+    return "Usuário não encontrado";
+  }else if(
+    error.code == "auth/wrong-password"){
+    return "Senha errada";
+    }
+  return error.message;
+}
 
 //=================================================================================
 
