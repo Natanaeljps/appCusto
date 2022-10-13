@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <!--STYLE-->
-    <link rel="stylesheet" href="/cadastro/cadastro.css">
-    <link rel="stylesheet" href="/global/global.css">
+    <link rel="stylesheet" href="/style/cadastro.css">
+    <link rel="stylesheet" href="/style/global.css">
 
 
     <title>App De Receita$/Custo$ - Cadastro</title>
@@ -32,15 +32,34 @@
         <div class="email">
             <label for="email" id="txtEmail"> <h3>Email: </h3></label>
             <input type="text" onchange="onChangeEmail()" id="boxEmail" placeholder="Seu email:">
+            
+            <div class="erro" id="sem_email">
+                Email é Obrigatório.
+            </div>
+            <div class="erro" id="email_invalido">
+                Email é inválido.
+            </div>
+
         </div>
         <div class="senha">
             <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
-            <input type="password" onchange="onChangeSenha" id="boxSenha" placeholder="Senha:">
+            <input type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
+            
+            <div class="erro" id="sem_senha">
+                Senha é Obrigatório.
+            </div>
+            <div class="erro" id="senha_invalido">
+                Senha deve ter pelo meno 6 caracteres.
+            </div>
+        
         </div>
 
         <div class="coSenha">
             <label for="senha" id="txtCoSenha"><h3>Confirmar Senha:</h3></label>
-            <input type="password" onchange="onChangeCoSenha" id="boxCoSenha" placeholder="Confirme sua Senha:">
+            <input type="password" onchange="onChangeCoSenha()" id="boxCoSenha" placeholder="Confirme sua Senha:">
+
+            <div class="erro" id="senhas_diferentes">
+                Senha e Confirmar Senha, devem ser iguais.
         </div>
 
         <div class="btLogin">
@@ -48,7 +67,7 @@
         </div>
 
         <div class="btCadastrar">
-            <button class="solid" onclick="cadastrar()"><h2>Cadastrar!</h2></button>
+            <button id="cadastrar" class="solid" onclick="cadastrar()" disabled="true"><h2>Cadastrar!</h2></button>
         </div>
     </main>
 
@@ -57,8 +76,8 @@
     </footer>
 
     <!--PROJETOS-->
-    <script src="/cadastro/cadastro.js"></script>
-    <script src="/global/global.js"></script>
+    <script src="/main/cadastro.js"></script>
+    <script src="/main/global.js"></script>
 
      <!--FIREBASE-->
      <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>

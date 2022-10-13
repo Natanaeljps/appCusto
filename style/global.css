@@ -77,6 +77,17 @@ input{
     border-radius: 1.5rem;
 }
 
+.erro{
+    font-size: 12px;
+    height: 2rem;
+    width: 17.5rem;
+    padding-top: .4rem;
+    color: white;
+    background: red;
+    margin-left: 33.5rem;
+    display: none;
+}
+
 /*BOTÂO*/
 
 button{
