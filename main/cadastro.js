@@ -4,7 +4,8 @@ function onChangeEmail() {
     const email = form.boxEmail().value;
     form.semEmail().style.display = email ? "none" : "block";
 
-    form.emailInvalido().style.display = validateEmail(email) ? "none" : "block";
+    form.emailInvalido()
+    .style.display = validateEmail(email) ? "none" : "block";
     toggleRegisterButtonDisable();
 
 }
@@ -15,7 +16,8 @@ function onChangeSenha() {
     const senha = form.boxSenha().value;
     form.semSenha().style.display = senha ? "none" : "block";
 
-    form.senhaInvalido().style.display = senha.length >= 6 ? "none" : "block";
+    form.senhaInvalido()
+    .style.display = senha.length >= 6 ? "none" : "block";
 
     validarSenha(); 
     toggleRegisterButtonDisable();
@@ -29,13 +31,35 @@ function onChangeCoSenha() {
     toggleRegisterButtonDisable();
 }
 
+//====== Cadastar usuário (Firebase) ========
+
+function cadastrar() {
+    const email = form.boxEmail().value;
+    const senha = form.boxSenha().value;
+    firebase.auth().createUserWithEmailAndPassword(
+        email, senha
+    ).then(()=>{
+        window.location.href = "/page/inicial.html";
+    }).catch(error => {
+        alert(getErrorMessage(error));
+    })
+}
+
+function getErrorMessage(error) {
+    if (error.code == "auth/email-already-in-use") {
+        return "Email já em uso."
+    }
+    return error.message;
+}
+
 //====== confirmar Senhas ========
 
 function validarSenha() {
     const senha =  form.boxSenha().value;
     const confirmaSenha = form.boxCoSenha().value;
     
-    form.senhasDiferentes().style.display = senha == confirmaSenha ? "none" : "block";
+    form.senhasDiferentes()
+    .style.display = senha == confirmaSenha ? "none" : "block";
 }
 
 //====== habilitar e Desabilitar o botão cadastar ========

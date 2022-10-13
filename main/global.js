@@ -16,10 +16,6 @@ function validateEmail(email) {
     window.location.href = "/page/cadastro.html";    
 }
 
-  //================DEPOIS DO CADASTRO==============================
+   //==============================================
 
-  function cadastrar() {
-    window.location.href = "/page/login.html";    
-}
-
-  //==============================================
+  
