@@ -10,8 +10,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-firebase.auth().onAuthStateChanged( user => {
-    if (user) {
-      window.location.href = "/page/inicial.html";
-    }
-  })
+
+
+  

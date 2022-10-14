@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
-html{
+body{
     background: lightgreen;
-    text-align: center;
 }
 
 /*LOGO*/
+
+#cabeca{
+    text-align: center;
+}
 
 #logo{
     font-family: 'Bebas Neue', cursive;
@@ -28,6 +31,7 @@ html{
 /*CAIXAS*/
 
 #caixas{
+    text-align: center;
     font-family: 'Sora', sans-serif;
 
 }
@@ -90,19 +94,52 @@ input{
 
 /*BOTÂO*/
 
-button{
+button{    
+    border: none;
+    font-family: 'Sora', sans-serif;
+}
+
+.solid{
     background: lightsalmon;
     height: 3rem;
     width: 10rem;
     border-radius: 2.5rem;
-    border: none;
-    font-family: 'Sora', sans-serif;
     font-size: 12px;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
+.clear{
+    background: none;
+    color: darkblue;
+    margin: 1rem 0;
+}
+
+
+button.fab{
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+button.fab.fixed{
+    position: fixed;
+}
+
+button.fab.bottom{
+    bottom: 32px;
+}
+
+button.fab.right{
+    right: 32px;
+}
+
 
 footer{
+    text-align: center;
     margin-top: 2rem;
+    
 }

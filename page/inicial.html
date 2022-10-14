@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Sora:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!--STYLE-->
+    <link rel="stylesheet" href="/style/global.css">
+    <link rel="stylesheet" href="/style/inicial.css">
+
+
     <title>App Receita$/Custo$ - tela Inicial</title>
 </head>
 <body>
-    <h1>PAGINA INICIAL</h1>
+    
+    <header>
+        <button type="button" class="clear" onclick="btSair()"><h3>Sair</h3></button>
+    </header>
+ 
+    <ol id="transacoes">
+        
+    </ol>
+
+    <button class="fab fixed bottom right">+</button>
+
+
+
+
+
+
+    <footer id="rodape">
+        <p>Make by NatanaelJPS</p>
+    </footer>
+
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>    
+    <script src="/main/validateEmail.js"></script>
+    <script src="/main/firebase-init.js"></script>
+    <script src="/main/auth-guard.js"></script>
+    <!--PROJETOS-->
+    <script src="/main/inicial.js"></script>
+    
+    
 </body>
 </html>

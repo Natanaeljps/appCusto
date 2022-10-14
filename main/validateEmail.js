@@ -10,12 +10,6 @@ function validateEmail(email) {
     window.location.href = "/page/login.html";    
 }
 
-  //================LOGIN PARA CADASTRO==============================
-
-  function btCadastrar() {
-    window.location.href = "/page/cadastro.html";    
-}
-
-   //==============================================
-
   
+
+//===================================================================

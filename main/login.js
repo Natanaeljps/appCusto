@@ -1,12 +1,16 @@
 
+//================LOGIN PARA CADASTRO==============================
+
+function btCadastrar() {
+  window.location.href = "/page/cadastro.html";    
+}
+
 //====== Entrar direto quando usuário estuver logado ==========================================
-/*
 firebase.auth().onAuthStateChanged( user => {
   if (user) {
     window.location.href = "/page/inicial.html";
   }
 })
-*/
 //=================AUTENTICAÇões================================================================
 function onChangeEmail(){
     toggleButtonsDisable();

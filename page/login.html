@@ -56,10 +56,10 @@
     disabled="true">Recuperar Senha!</button>
     </div>
 
-    <button type="button" onclick="btCadastrar()"><h2>Cadastro!</h2></button>
+    <button class="clear" type="button" onclick="btCadastrar()"><h2>Fazer Cadastro!</h2></button>
 
     <div>
-        <button id="logar" disabled="true" 
+        <button class="solid" id="logar" disabled="true" 
         type="button" onclick="login()"><h2>Entrar!</h2></button>
     </div>
 </form>
@@ -70,14 +70,16 @@
         <p>Make by NatanaelJPS</p>
     </footer>
 
-    <!--PROJETOS-->
-    <script src="/main/login.js"></script>
-    <script src="/main/global.js"></script>
+    
 
     <!--FIREBASE-->
     <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>    
     <script src="/main/firebase-init.js"></script>
+
+    <!--PROJETOS-->
+    <script src="/main/login.js"></script>
+    <script src="/main/validateEmail.js"></script>
     
 </body>
 </html>
