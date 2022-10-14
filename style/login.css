@@ -1,9 +1,5 @@
-#login{
-    margin-bottom: 3rem;
-    font-family: 'Sora', sans-serif;
 
-}
-
+/**BOTÕES*/
 
 #recSenha {
     background: darkslateblue;
@@ -12,7 +8,6 @@
     border-radius: 1rem;
     height: 2rem;
     width: 15rem;
-    margin-top: 2rem;
 
 }
 

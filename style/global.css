@@ -6,12 +6,14 @@
 
 body{
     background: lightgreen;
+    text-align: center;
 }
 
 /*LOGO*/
 
 #cabeca{
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 #logo{
@@ -30,68 +32,41 @@ body{
 
 /*CAIXAS*/
 
-#caixas{
-    text-align: center;
-    font-family: 'Sora', sans-serif;
 
-}
-.email{
+.box{
     margin-bottom: 3rem;
-}
-
-input{
-    font-size: 20px;
+    font-size: 15px;
     padding-left: 1rem;
+    padding-right: 1rem;
     border: none;
-}
 
-#txtEmail{
-    position: absolute;
-    margin-top: -1.5rem;
-    margin-left: 1rem;
-}
-
-#boxEmail{
     width: 20rem;
     height: 3rem;
     border-radius: 1.5rem;
 }
 
-#txtSenha{
+.txt{
+    font-family: 'Sora', sans-serif;
     position: absolute;
     margin-top: -1.5rem;
     margin-left: 1rem;
 }
 
-#txtCoSenha{
-    position: absolute;
-    margin-top: -1.5rem;
-    margin-left: 1rem;
-}
-
-#boxSenha{
-    width: 20rem;
-    height: 3rem;
-    border-radius: 1.5rem;
-}
-
-#boxCoSenha{
-    width: 20rem;
-    height: 3rem;
-    border-radius: 1.5rem;
+.radio{
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 2rem;
 }
 
 .erro{
-    font-size: 12px;
     height: 2rem;
     width: 17.5rem;
     padding-top: .4rem;
     color: white;
     background: red;
-    margin-left: 33.5rem;
     display: none;
-}
 
+    margin: -2.5rem 0 2.5rem 3rem;
+}
 /*BOTÂO*/
 
 button{    
@@ -104,9 +79,6 @@ button{
     height: 3rem;
     width: 10rem;
     border-radius: 2.5rem;
-    font-size: 12px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .clear{
@@ -142,4 +114,15 @@ footer{
     text-align: center;
     margin-top: 2rem;
     
+}
+
+header{
+    text-align: right;
+}
+
+header button{
+    height: auto;
+    width: 5rem;
+    margin-right: 1rem;
+
 }

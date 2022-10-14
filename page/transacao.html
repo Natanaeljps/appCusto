@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Sora:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!--STYLE-->
+    <link rel="stylesheet" href="/style/transacao.css">
+    <link rel="stylesheet" href="/style/global.css">
+
+
+    <title>App De Receita$/Custo$ - Transações</title>
+</head>
+<body>
+
+    <header>
+        <button type="button" class="clear" onclick="btSair()"><h3>Sair</h3></button>
+    </header>
+
+    <main id="caixas">
+        <form >
+        
+            <div class="radio">
+                <div><label class="trans">Transação</label></div>
+                <input type="radio" name="tipo" id="despesa">
+                <label for="despesa">Despesa</label>
+                <input type="radio" name="tipo" id="ganho">
+                <label for="ganho">Receita</label>
+            </div>
+            
+            <div>
+                <label class="txt">Data da Transação</label>
+                <input class="box" type="date">
+            </div>
+            
+            <div>
+                <label class="txt">Moeda</label>
+            
+            <select class="box">
+                <option>Dolar</option>
+                <option>Euro</option>
+                <option selected>Real</option>
+            </select>
+            </div>
+
+            <div><label class="txt">Valor</label>
+                <input class="box" type="number">
+            </div>
+            
+            <div><label class="txt">Topo de Transação</label>
+            <select class="box">
+                <option>-- Selecione um tipo de Transação --</option>
+                <option>Acomodação</option>
+                <option>Supermercado</option>
+                <option>Transporte</option>
+                <option>Salário</option>
+                <option>Alimentação</option>
+                <option>Outros</option>
+            </select>
+            </div>
+
+            <div><label class="txt">Descrição</label>
+                <input class="box" type="text">
+            </div>
+
+            <div>
+                <button type="button" class="solid">Salvar</button>
+            </div>
+
+            <div>
+                <button type="button" class="clear">Cancelar</button>
+            </div>
+                 
+                
+            
+        </form>
+    </main>
+    
+   
+
+
+
+
+
+
+
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>    
+    <script src="/main/firebase-init.js"></script>
+
+    <!--PROJETOS-->
+    <script src="/main/transacao.js"></script>
+    <script src="/main/validateEmail.js"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 //================DESFAZER LOGIN===================================
 
+const { Console } = require("console");
+
 function btSair() {
     firebase.auth().signOut().then(()=>{
       window.location.href = "/page/login.html";
@@ -8,14 +10,33 @@ function btSair() {
     })
   }
 
+//=======================================
 
-  findTransactions();
+  firebase.auth().onAuthStateChanged(user =>{
+    if (user) {
+      findTransactions(user);
+    }
+  })
 
-  function findTransactions() {
-    setTimeout(()=>{
-      addTransactionsToScreen(transacoesFake);
-    }, 1000)
-  }
+function novaTransacao() {
+  window.location.href = "/page/transacao.html";
+}
+
+ function findTransactions(user) {
+    firebase.firestore()
+    .collection('transacoes')
+    .where('user.uid', '==', user.uid)
+    .orderBy('data', 'desc')  
+    .get()
+    .then(snapshot => {
+      const transacoes = snapshot.doc.map(doc => doc.data());
+      addTransactionsToScreen(transacoes);
+    })
+    .catch(error =>{
+      console.log(error);
+      alert('Erro ao recuperar transação.')
+    })
+ }
 
   function addTransactionsToScreen(transacoes) {
     const listaOrdenada = document.getElementById('transacoes');
@@ -28,6 +49,20 @@ function btSair() {
         data.innerHTML = formataData(transacao.data);
         li.appendChild(data);
 
+        const dinheiro = document.createElement('p');
+        dinheiro.innerHTML = dinheiroBr(transacao.dinheiro);
+        li.appendChild(dinheiro);
+
+        const tipo = document.createElement('p');
+        tipo.innerHTML  = transacao.tipoDaTransacao;
+        li.appendChild(tipo);
+
+        if (transacao.descricao) {
+          const descricao = document.createElement('p');
+          descricao.innerHTML = transacao.descricao;
+          li.appendChild(descricao);
+        }
+
 
         listaOrdenada.appendChild(li);
 
@@ -39,6 +74,10 @@ function btSair() {
     return new Date(data).toLocaleDateString('pt-br');
   }
 
+  function dinheiroBr(dinheiro) {
+    return `${dinheiro.moeda} ${dinheiro.valor.toFixed(2)}`
+  }
+
 
   const transacoesFake = [{
     tipo: 'despesa',
@@ -48,7 +87,7 @@ function btSair() {
       valor: 34
     },
     tipoDaTransacao: 'Supermercado'
-  }, {
+  },{
     tipo: 'ganho',
     data: '2022-02-05',
     dinheiro: {
@@ -62,7 +101,7 @@ function btSair() {
     data: '2022-01-10',
     dinheiro: {
       moeda: 'EUR',
-      valor: 40.50
+      valor: 40
     },
     tipoDaTransacao: 'Transporte',
     descricao: 'ida e volta ao trabalho'

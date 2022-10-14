@@ -29,9 +29,9 @@
     </header>
 
     <main id="caixas">
-        <div class="email">
-            <label for="email" id="txtEmail"> <h3>Email: </h3></label>
-            <input type="text" onchange="onChangeEmail()" id="boxEmail" placeholder="Seu email:">
+        <div>
+            <label class="txt" for="email" id="txtEmail"> <h3>Email: </h3></label>
+            <input class="box" type="text" onchange="onChangeEmail()" id="boxEmail" placeholder="Seu email:">
             
             <div class="erro" id="sem_email">
                 Email é Obrigatório.
@@ -41,9 +41,9 @@
             </div>
 
         </div>
-        <div class="senha">
-            <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
-            <input type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
+        <div>
+            <label class="txt" for="senha" id="txtSenha"><h3>Senha:</h3></label>
+            <input class="box" type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
             
             <div class="erro" id="sem_senha">
                 Senha é Obrigatório.
@@ -54,19 +54,19 @@
         
         </div>
 
-        <div class="coSenha">
-            <label for="senha" id="txtCoSenha"><h3>Confirmar Senha:</h3></label>
-            <input type="password" onchange="onChangeCoSenha()" id="boxCoSenha" placeholder="Confirme sua Senha:">
+        <div>
+            <label class="txt" for="senha" id="txtCoSenha"><h3>Confirmar Senha:</h3></label>
+            <input class="box" type="password" onchange="onChangeCoSenha()" id="boxCoSenha" placeholder="Confirme sua Senha:">
 
             <div class="erro" id="senhas_diferentes">
                 Senha e Confirmar Senha, devem ser iguais.
         </div>
 
-        <div class="btLogin">
+        <div class="btn">
             <button class="clear" onclick="btLogin()"><h2>Vou ao login</h2></button>
         </div>
 
-        <div class="btCadastrar">
+        <div class="btn">
             <button id="cadastrar" class="solid" onclick="cadastrar()" disabled="true"><h2>Cadastrar!</h2></button>
         </div>
     </main>

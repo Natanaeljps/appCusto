@@ -31,9 +31,9 @@
 
     <main id="caixas">
 <form action="">
-    <div class="email">
-        <label for="e-mail" id="txtEmail"> <h3>Email: </h3></label>
-        <input onchange="onChangeEmail()" type="email" id="boxEmail" placeholder="Seu email:">
+    <div>
+        <label class="txt" for="e-mail" id="txtEmail"> <h3>Email: </h3></label>
+        <input class="box" onchange="onChangeEmail()" type="email" id="boxEmail" placeholder="Seu email:">
 
         <div class="erro" id="sem_email">
             Email é Obrigatório
@@ -43,9 +43,9 @@
         </div>
         
     </div>
-    <div class="senha">
-        <label for="senha" id="txtSenha"><h3>Senha:</h3></label>
-        <input type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
+    <div>
+        <label class="txt" for="senha" id="txtSenha"><h3>Senha:</h3></label>
+        <input class="box" type="password" onchange="onChangeSenha()" id="boxSenha" placeholder="Senha:">
 
         <div class="erro" id="sem_senha">Senha é Obrigatório</div>
 
