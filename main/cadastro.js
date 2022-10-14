@@ -1,3 +1,11 @@
+//====== Entrar direto quando usuário estuver logado ========
+
+/*firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      window.location.href = "/page/inicial.html";
+    }
+  });
+*/
 //====== E-mail validade ========
 
 function onChangeEmail() {
