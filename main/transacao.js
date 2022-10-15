@@ -11,6 +11,11 @@ function onChangeValue() {
     form.valorMaiorZero().style.display = valor <=0 ? 'block' : 'none';
 }
 
+function onChangeTransactionType() {
+    const tipoTransacao = form.tipoTransacao().value;
+    form.semTransacao().style.display = !tipoTransacao ? 'block' : 'none';
+}
+
 const form = {
     data: () => document.getElementById('data'),
     semData: () => document.getElementById('sem_data'),
