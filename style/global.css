@@ -66,6 +66,7 @@ body{
 }
 
 .erro{
+    font-family: 'Sora', sans-serif;
     height: 2rem;
     width: 17.5rem;
     padding-top: .4rem;
@@ -73,9 +74,11 @@ body{
     background: red;
     display: none;
 
-    font-size: 14px;
+    font-size: 16px;
 
-    margin: -2rem 0 2.5rem 33.5rem;
+    margin: -2rem 0 2.5rem 3rem;
+
+  
 }
 /*BOTÂO*/
 
@@ -148,4 +151,23 @@ header button{
     .radio2{
         margin: 0 40%;
     }
+
+    .erro{
+        height: 2rem;
+        width: 17.5rem;
+        padding-top: .4rem;
+        color: white;
+        background: red;
+        display: none;
+    
+        font-size: 14px;
+    
+        margin: -2rem 0 2.5rem 33.5rem;
+    }
+
+
+
+
+
+
 }

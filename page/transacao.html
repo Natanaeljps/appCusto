@@ -29,7 +29,7 @@
         <form >
         
         <div class="radio">
-                <div><label class="trans">Transação</label></div>
+                <div><label class="trans">Transação *</label></div>
             <div class="radio2">
                 <div>
                 <input type="radio" name="tipo" id="despesa">
@@ -43,12 +43,15 @@
         </div>
             
             <div>
-                <label class="txt">Data da Transação</label>
-                <input class="box" type="date">
+                <label class="txt">Data da Transação *</label>
+                <input class="box" type="date" onchange="onChangeDate()" id="data">
+                <div class="erro" id="sem_data">
+                    Data é Obrigatória/Inválida.
+                </div>                
             </div>
             
             <div>
-                <label class="txt">Moeda</label>
+                <label class="txt">Moeda *</label>
             
             <select class="box">
                 <option>Dolar</option>
@@ -57,12 +60,18 @@
             </select>
             </div>
 
-            <div><label class="txt">Valor</label>
-                <input class="box" type="number">
+            <div><label class="txt">Valor *</label>
+                <input class="box" type="number" onchange="onChangeValue()" id="valor">
+                <div class="erro" id="sem_valor">
+                    Valor é Obrigatório.
+                </div> 
+                <div class="erro" id="valor_maior_zero">
+                    Valor deve ser maior que zero.
+                </div>
             </div>
             
-            <div><label class="txt">Topo de Transação</label>
-            <select class="box">
+            <div><label class="txt">Topo de Transação *</label>
+            <select class="box" onchange="onChangeTransactionType()" id="tipoTransacao">
                 <option>-- Selecione um tipo de Transação --</option>
                 <option>Acomodação</option>
                 <option>Supermercado</option>
@@ -71,6 +80,9 @@
                 <option>Alimentação</option>
                 <option>Outros</option>
             </select>
+            <div class="erro" id="sem_tipo_transacao">
+                Valor deve ser maior que zero.
+            </div>
             </div>
 
             <div><label class="txt">Descrição</label>
@@ -78,7 +90,7 @@
             </div>
 
             <div>
-                <button type="button" class="solid">Salvar</button>
+                <button type="button" class="solid" disabled>Salvar</button>
             </div>
 
             <div>
