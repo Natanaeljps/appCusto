@@ -53,10 +53,10 @@
             <div>
                 <label class="txt">Moeda *</label>
             
-            <select class="box">
-                <option>Dolar</option>
-                <option>Euro</option>
-                <option selected>Real</option>
+            <select class="box" id="moeda">
+                <option value="USD">Dolar</option>
+                <option value="EUR">Euro</option>
+                <option selected value="BRL">Real</option>
             </select>
             </div>
 
@@ -70,27 +70,28 @@
                 </div>
             </div>
             
-            <div><label class="txt">Topo de Transação *</label>
-            <select class="box" onchange="onChangeTransactionType()" id="tipoTransacao">
-                <option value="1">-- Selecione um tipo de Transação --</option>
-                <option>Acomodação</option>
-                <option>Supermercado</option>
-                <option>Transporte</option>
-                <option>Salário</option>
-                <option>Alimentação</option>
-                <option>Outros</option>
-            </select>
-            <div class="erro" id="sem_tipo_transacao">
-                Valor deve ser maior que zero.
-            </div>
+            <div>
+                <label class="txt">Tipo de Transação *</label>
+                    <select class="box" onchange="onChangeTransactionType()" id="tipo_transacao">
+                        <option value="">-- Selecione um tipo de Transação --</option>
+                        <option>Acomodação</option>
+                        <option>Supermercado</option>
+                        <option>Transporte</option>
+                        <option>Salário</option>
+                        <option>Alimentação</option>
+                        <option>Outros</option>
+                    </select>
+                <div class="erro" id="sem_tipo_transacao">
+                Tipo de transação é obrigatória.
+                </div>
             </div>
 
             <div><label class="txt">Descrição</label>
-                <input class="box" type="text">
+                <input class="box" type="text" id="descricao">
             </div>
 
             <div>
-                <button type="button" class="solid" disabled>Salvar</button>
+                <button type="button" class="solid" id="bt_salvar" onclick="saveTransaction()" disabled>Salvar</button>
             </div>
 
             <div>
@@ -113,7 +114,9 @@
 
     <!--FIREBASE-->
     <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-firestore-compat.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/9.12.0/firebase-auth-compat.js"></script>
+        
     <script src="/main/firebase-init.js"></script>
 
     <!--PROJETOS-->

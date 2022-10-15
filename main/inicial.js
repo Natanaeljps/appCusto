@@ -1,6 +1,6 @@
 //================DESFAZER LOGIN===================================
 
-const { Console } = require("console");
+
 
 function btSair() {
     firebase.auth().signOut().then(()=>{
@@ -12,9 +12,9 @@ function btSair() {
 
 //=======================================
 
-  firebase.auth().onAuthStateChanged(user =>{
-    if (user) {
-      findTransactions(user);
+  firebase.auth().onAuthStateChanged(usuario =>{
+    if (usuario) {
+      findTransactions(usuario);
     }
   })
 
@@ -24,12 +24,12 @@ function novaTransacao() {
 
  function findTransactions(user) {
     firebase.firestore()
-    .collection('transacoes')
-    .where('user.uid', '==', user.uid)
+    .collection('transações')
+    .where('usuario.uid', '==', user.uid)
     .orderBy('data', 'desc')  
     .get()
     .then(snapshot => {
-      const transacoes = snapshot.doc.map(doc => doc.data());
+      const transacoes = snapshot.docs.map(doc => doc.data());
       addTransactionsToScreen(transacoes);
     })
     .catch(error =>{
@@ -53,9 +53,9 @@ function novaTransacao() {
         dinheiro.innerHTML = dinheiroBr(transacao.dinheiro);
         li.appendChild(dinheiro);
 
-        const tipo = document.createElement('p');
-        tipo.innerHTML  = transacao.tipoDaTransacao;
-        li.appendChild(tipo);
+        const tipoTransacao = document.createElement('p');
+        tipoTransacao.innerHTML  = transacao.tipoTransacao;
+        li.appendChild(tipoTransacao);
 
         if (transacao.descricao) {
           const descricao = document.createElement('p');
@@ -78,7 +78,7 @@ function novaTransacao() {
     return `${dinheiro.moeda} ${dinheiro.valor.toFixed(2)}`
   }
 
-
+/*
   const transacoesFake = [{
     tipo: 'despesa',
     data: '2022-01-01',
@@ -115,3 +115,5 @@ function novaTransacao() {
     tipoDaTransacao: 'Aluguel',
     descricao:'Mensalidade'
   }]
+
+  */
