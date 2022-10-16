@@ -1,3 +1,48 @@
+if (!isNewTransaction()) {
+    const uid = getTransationUid();
+    findTransactionByUid();
+}
+
+function getTransationUid() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('uid');
+}
+
+function isNewTransaction() {
+    return getTransationUid() ? false : true;
+}
+
+function findTransactionByUid() {
+    firebase.firestore()
+    .collection("transações")
+    .doc(uid)
+    .get()
+    .then(doc => {
+        if (doc.exists) {
+            fillTransactionScreen(doc.data());
+        }else{
+            alert ("Documento não encontrado");
+            window.location.href = "/page/inicial.html";
+        }
+    })
+    .catch(() => {
+        alert ("Erro ao recuperar documento");
+        window.location.href = "/page/inicial.html";
+    })
+
+    }
+
+    function fillTransactionScreen(transacao) {
+        if (transacao.tipo == "despesa") {
+            form.tipoDespesa().checked = true;
+        }else{
+            form.tipoGanho().checked = true;
+        }
+    }
+
+
+
+
 function saveTransaction() {
 
 
@@ -10,8 +55,11 @@ function saveTransaction() {
             window.location.href = "/page/inicial.html";
         })
         .catch(()=>{
-            alert('Erro ao salvar transação!')
+            alert('Erro ao salvar transação!');
         })
+
+
+    }
 
     function createTransaction() {
         return{
@@ -22,14 +70,17 @@ function saveTransaction() {
                 valor: parseFloat(form.valor().value)
             },
             tipoTransacao: form.tipoTransacao().value,
-            descrisao: form.descricao().value,
+            descricao: form.descricao().value,
+            usuario: {
+                uid: firebase.auth().currentUser.uid
+            }
             
     
-        }
+        };
     }
 
                 
-}
+
 
 
 function onChangeDate() {

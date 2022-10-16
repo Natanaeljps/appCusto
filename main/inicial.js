@@ -22,19 +22,22 @@ function novaTransacao() {
   window.location.href = "/page/transacao.html";
 }
 
- function findTransactions(user) {
+ function findTransactions(usuario) {
     firebase.firestore()
     .collection('transações')
-    .where('usuario.uid', '==', user.uid)
+    .where('usuario.uid', '==', usuario.uid)
     .orderBy('data', 'desc')  
     .get()
     .then(snapshot => {
-      const transacoes = snapshot.docs.map(doc => doc.data());
+      const transacoes = snapshot.docs.map(doc => ({
+         ...doc.data(),
+         uid: doc.id
+        }));
       addTransactionsToScreen(transacoes);
     })
     .catch(error =>{
       console.log(error);
-      alert('Erro ao recuperar transação.')
+      alert('Erro ao recuperar transação.');
     })
  }
 
@@ -44,6 +47,9 @@ function novaTransacao() {
     transacoes.forEach(transacao => {
         const li = document.createElement('li');
         li.classList.add(transacao.tipo);
+        li.addEventListener('click', () => {
+          window.location.href = "/page/transacao.html?uid=" + transacao.uid;
+        })
 
         const data = document.createElement('p');
         data.innerHTML = formataData(transacao.data);
