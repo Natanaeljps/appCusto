@@ -1,6 +1,6 @@
 if (!isNewTransaction()) {
     const uid = getTransationUid();
-    findTransactionByUid();
+    findTransactionByUid(uid);
 }
 
 function getTransationUid() {
@@ -33,12 +33,22 @@ function findTransactionByUid() {
     }
 
     function fillTransactionScreen(transacao) {
+        toggleSaveButtonDisable();
         if (transacao.tipo == "despesa") {
             form.tipoDespesa().checked = true;
         }else{
             form.tipoGanho().checked = true;
         }
-    }
+
+        form.data().value = transacao.data;
+        form.moeda().value = transacao.dinheiro.moeda;
+        form.valor().value = transacao.dinheiro.valor;
+        form.tipoTransacao().value = transacao.tipoTransacao;
+        }
+
+        if (transcao.descricao) {
+            form.descricao().value = transacao.descricao;
+        }
 
 
 
